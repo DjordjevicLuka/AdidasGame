@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property=”og:url” content=”https://creatorsonly.sportvision.me”/>
+  <meta property=”og:type” content=”website”/>
+  <meta property=”og:description” content=”CreatorsOnly”/>
+  <title>Creators only</title>
+  <style>
+
+@media only screen and (max-width: 600px) {
+  #myModalInfo0 img {
+      width: 150px !important;
+    }
+}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 25;
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal {
+      transition: .5s;
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      /* padding-top: 100px; Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      transition: .5s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      border-radius: 5px;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .modal-content-form {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .submit-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .submit-form input {
+      /* width: 100%; */
+      height: 42px;
+      width: 320px;
+      min-width: 180px;
+      border-radius: 5px;
+      margin: 10px;
+      border: solid .5px #aaaaaa;
+      text-align: center;
+    }
+
+    .submit-form input:focus {
+      outline: none
+    }
+
+    .submit-form .submit {
+      height: 42px;
+      width: 320px;
+      min-width: 180px;
+      border-radius: 5px;
+      margin: 10px;
+      border: none;
+      text-align: center;
+      background-color: chartreuse;
+      color: #fff;
+      font-weight: bold;
+      font-size: 120%;
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.16)
+    }
+
+    .submit-form .submit:hover {
+      background-color: rgb(84, 165, 4);
+      cursor: pointer;
+    }
+
+    .submit:focus {
+      outline: none;
+      border-radius: 5px;
+    }
+
+    .submit-form input::placeholder {
+      text-align: center;
+    }
+
+    .close-modal {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .refresh {
+      display: flex;
+      /* flex-direction: column; */
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .refresh button {
+      margin: 10px 10px 0 10px;
+      border: none;
+      background: transparent;
+    }
+
+    .refresh button:hover {
+      cursor: pointer;
+    }
+
+    .menu-modal {
+      /* background-color: aqua; */
+      flex-direction: column !important;
+      font-weight: 500;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .video-modal {
+      padding: 0 !important;
+      background: transparent;
+      color: #fff;
+      border: none;
+      text-align: right;
+    }
+
+    .row{
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      /* width: fit-content; */
+    }
+
+    .p-butt {
+      font-size: 20px; 
+      margin: 0; 
+      text-align: center; 
+      /* width: fit-content; */
+      color: #fff;
+      border-radius: 5px;
+      background-color: green;
+      padding: 0 5px 5px 5px;
+      cursor: pointer;
+    }
+
+    h2, h4 {
+      margin: 0 !important;
+      text-align: center;
+    }
+
+    #myModalInfo1, #myModalInfo0, #video {
+      padding-top: 20px;
+    }
+
+    #video-close {
+      z-index: 20000000000000000000;
+       margin: 0 -10px -10px 0 ;
+       font-size: 20px;
+       text-align: center;
+       width: 30px;
+       height: 30px;
+       border-radius: 50%;
+       background: #000;
+    }
+
+    .end-butt {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+  </style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79778051-2"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-79778051-2');
+</script>
+
+</head>
+  <body>
+      <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+              <h2>Pošalji svoj rezultat i osvoji idealne adidas kopačke!</h2>
+              <h4 id="result" style="text-align: center;"></h4>
+              <div class="modal-content-form">
+                  <div>
+                    <!-- <ol>
+                      <li id="num1"></li>
+                      <li id="num2"></li>
+                      <li id="num3"></li>
+                    </ol> -->
+                  </div>
+                  <form id="result-form" class="submit-form">
+                    <input type="text" name="username" id="username" placeholder="Ime i prezime">
+                    <input type="email" name="email" id="email" placeholder="E-mail">
+                    <input type="text" name="tel" id="tel" placeholder="Telefon">
+                    <input class="submit" type="button" onclick="onSubmit()" value ="Pošalji rezultat">
+                  </form>
+                  <div class="close-modal">
+                      <!-- <span class="close">&times;</span> -->
+                      <div></div>
+                      <div class="refresh">
+                        <button id='refresh'>
+                          <img src="refresh.png">
+                        </button>
+                        <button id='new'>
+                            <img src="new.png">
+                        </button>
+                      </div>
+                  </div>
+                </div>
+          </div>
+          
+        
+        </div>
+
+        <div id="myModalInfo0" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content menu-modal">
+              <p>Dobrodošli u #adidas svijet kreatora!<br>
+                <br>
+                Cilj igre je skupiti što je moguće više poena (lopti) i izbjeći prepreke.<br>
+                Kreator sa najviše osvojenih poena dobija #adidas kopačke iz Exhibit pack kolekcije - po svom izboru.<br>
+                Potrebno je samo da na kraju igre ostaviš podatke i pošalješ svoj rezultat.<br>
+                <br>
+                Za kretanje koristi strelice, a za jedinstvenu moć stisni "space" dugme ili klikni na kopačku.<br>
+                Da započneš igru izaberi dječaka ili djevojčicu, koji te predstavlja u igri.
+              </p>
+              <div class="row">
+                <img src="Idle.gif">
+                <img src="GirlIdle.gif">                
+              </div>
+              <p class="p-butt" onclick="closeMe('myModalInfo', 0)">Dalje</p>
+          </div>
+          
+        </div>
+
+          <div id="myModalInfo1" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content menu-modal">
+              <p>A zatim jednu od četiri kopačke koju ćeš koristiti u toku igre.<br>
+                Izaberi pažljivo, jer svaka kopačka ima posebne moći!<br>
+                <br>
+
+                Copa:<br>
+                Igrač je otporan na prepreke određeni vremenski period.<br>
+                <br>
+                Nemeziz:<br>
+                Prepreke se usporavaju na određeni vremenski period.<br>
+                <br>
+                X:<br>
+                Broj lopti se duplira na određeni vremenski period.<br>
+                <br>
+                Predator:<br>
+                Uništava sve prepreke koje se nalaze na ekranu.
+              </p>
+              <p class="p-butt" onclick="closeMe('myModalInfo', 1)">Dalje</p>
+            </div>
+          </div>
+
+          <div id="isInstagram" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content menu-modal">
+              <p>Otvorite igricu u svom browser-u kao na videu</p>
+              <img src="tutorial.gif" width="300px" alt="tutorial">
+            </div>
+          </div>
+
+          <div id="video" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content video-modal">
+              <div class="end-butt">
+                <p id="video-close" onclick="menu.endVideo()">x</p>
+              </div>
+              <iframe id="frame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            </div>
+          </div>
+    <script src="pixi.min.js"></script>
+    <script src="p2.min.js"></script>
+    <script src="howler.min.js"></script>
+    <script src="game.js"></script>
+    <script src="menu.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
